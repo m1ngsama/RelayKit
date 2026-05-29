@@ -1,0 +1,25 @@
+[package]
+name = "relaykit-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+anyhow.workspace = true
+axum = { version = "0.7", features = ["ws"] }
+base64.workspace = true
+futures-util.workspace = true
+hyper.workspace = true
+hyper-util.workspace = true
+relaykit-protocol = { path = "../relaykit-protocol" }
+relaykit-tunnel = { path = "../relaykit-tunnel" }
+rustls.workspace = true
+serde.workspace = true
+tokio.workspace = true
+tokio-rustls.workspace = true
+tower.workspace = true
+tracing.workspace = true
+url.workspace = true
+uuid.workspace = true

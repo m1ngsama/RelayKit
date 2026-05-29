@@ -1,0 +1,20 @@
+[package]
+name = "relaykit-agent"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+anyhow.workspace = true
+futures-util.workspace = true
+relaykit-platform = { path = "../relaykit-platform" }
+relaykit-protocol = { path = "../relaykit-protocol" }
+relaykit-tunnel = { path = "../relaykit-tunnel" }
+serde.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tokio-tungstenite.workspace = true
+tracing.workspace = true
+url.workspace = true

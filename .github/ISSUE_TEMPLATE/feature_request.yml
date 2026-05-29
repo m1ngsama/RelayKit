@@ -1,0 +1,42 @@
+name: Feature request
+description: Propose a RelayKit improvement.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        RelayKit prioritizes explicit consent, short-lived sessions, operator authentication, auditability, and localhost-only defaults.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What workflow or safety issue should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the smallest useful change.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety considerations
+      description: How does this affect consent, stop control, auth, audit logs, TLS, and tunnel scope?
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Linux/SSH pilot
+        - Documentation
+        - Release tooling
+        - Windows/RDP lab-only
+        - Other
+    validations:
+      required: true

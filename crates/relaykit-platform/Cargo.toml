@@ -1,0 +1,10 @@
+[package]
+name = "relaykit-platform"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+serde.workspace = true

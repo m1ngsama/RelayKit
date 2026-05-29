@@ -1,0 +1,26 @@
+.DS_Store
+
+# Rust
+target/
+
+# Legacy build outputs
+/bin/
+/dist/
+*.test
+*.out
+coverage.txt
+
+# Local config and secrets
+.env
+.env.*
+!.env.example
+relaykit.local.*
+pilot-notes/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Editors
+.idea/
+.vscode/
