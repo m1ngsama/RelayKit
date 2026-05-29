@@ -1189,7 +1189,7 @@ dependencies = [
  "relaykit-protocol",
  "relaykit-tunnel",
  "serde",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "tokio",
  "tokio-tungstenite",
  "tracing",
@@ -1228,7 +1228,7 @@ version = "0.1.0"
 dependencies = [
  "serde",
  "serde_json",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
