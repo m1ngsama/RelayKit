@@ -1,5 +1,8 @@
 # RelayKit
 
+[![CI](https://github.com/m1ngsama/RelayKit/actions/workflows/ci.yml/badge.svg)](https://github.com/m1ngsama/RelayKit/actions/workflows/ci.yml)
+[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
+
 RelayKit is an open-source Rust toolkit for deploying trusted remote assistance capabilities to user machines quickly, using self-owned compute, relay, and tunneling infrastructure.
 
 The initial goal is not to clone a full commercial remote desktop product. It is to create a reliable operator workflow for helping a user on Windows, macOS, or Linux when they explicitly request support.
