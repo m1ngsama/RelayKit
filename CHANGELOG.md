@@ -5,16 +5,45 @@ All notable RelayKit changes are recorded here.
 This project follows the spirit of
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) for human-readable
 release notes. Version numbers follow [SemVer](https://semver.org/) where
-practical, but `0.x` releases remain private pilot builds until the support
-policy is finalized.
+practical. `0.x` releases remain pilot-quality and may include breaking changes
+between patch versions.
 
 ## Unreleased
+
+## 0.1.1 - 2026-05-29
+
+Release scope: first clean public source and binary release. Linux/SSH remains
+the only real-user pilot path. RDP remains lab-only.
+
+### Added
+
+- Published a clean public repository history with open-source governance,
+  safety, contribution, threat-model, abuse-prevention, and release-checklist
+  documents.
+- Added public CI status and dual-license badges.
+- Added a tag-based release workflow that builds Linux x86_64 and macOS arm64
+  archives containing `relaykitd`, `relaykit-agent`, `rk`, and `SHA256SUMS`.
 
 ### Changed
 
 - Changed the internal v0 wire codec from unmaintained `bincode` to JSON via
-  `serde_json`. Do not mix agents, relays, and operator binaries built from
-  different commits.
+  `serde_json`. `0.1.1` agents, relays, and operator binaries are not wire
+  compatible with private `0.1.0` binaries.
+- Removed the automatic Dependabot version-update configuration to avoid noisy
+  public dependency PR bursts. Dependency audit remains part of CI.
+
+### Security
+
+- Enabled GitHub private vulnerability reporting for the public repository.
+- Protected `main` with required `Rust checks` and `Dependency audit` status
+  checks.
+
+### Known Limitations
+
+- Release artifacts are checksummed but not signed yet.
+- Automated release archives cover Linux x86_64 and macOS arm64 only.
+- Windows/RDP support remains lab-only until a supported Windows rehearsal is
+  recorded.
 
 ## 0.1.0 - 2026-05-28
 

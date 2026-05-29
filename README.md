@@ -54,9 +54,22 @@ SECURITY.md          Vulnerability reporting and supported versions.
 
 ## Quick Start
 
-Public binary releases are not published from the clean public repository yet.
-Build from source for now, and verify any future release assets against their
-release notes and checksums.
+Download release archives from
+[GitHub Releases](https://github.com/m1ngsama/RelayKit/releases), or build from
+source with `cargo build --release --workspace`. Each release archive contains
+`relaykitd`, `relaykit-agent`, `rk`, and `SHA256SUMS`.
+
+Verify the downloaded archive checksum first, then verify the binaries inside
+the archive:
+
+```sh
+sha256sum -c relaykit-0.1.1-linux-x86_64.tar.gz.sha256
+tar -xzf relaykit-0.1.1-linux-x86_64.tar.gz
+cd relaykit-0.1.1-linux-x86_64
+sha256sum -c SHA256SUMS
+```
+
+On macOS, use `shasum -a 256 -c` for the `.sha256` file and `SHA256SUMS`.
 
 Run the relay daemon with an operator token:
 
@@ -170,7 +183,7 @@ sh -c 'u=$1; curl -fsSL --connect-timeout 10 --max-time 120 --noproxy "*" "$u" |
 ```
 
 If a hosted artifact has no checksum sidecar, the join script refuses to run it.
-Hosted join is usable for the 0.1.0 real-user pilot only when the matching
+Hosted join is usable for the 0.1.x real-user pilot only when the matching
 `.sha256` sidecar is served and verifies successfully.
 
 Non-local relay URLs must use encrypted HTTPS/WSS. A relay does not need a
@@ -219,17 +232,17 @@ Session codes are single-use by default. The operator token stays with the opera
 
 ## Release Roadmap
 
-The 0.1.0 target was a private real-user pilot, not a general availability
-release. The executable iteration order, security gates, Windows/RDP readiness
-criteria, and real user experience scripts live in
+The `0.1.x` line is pilot-quality, not general availability. The executable
+iteration order, security gates, Windows/RDP readiness criteria, and real user
+experience scripts live in
 [docs/release-roadmap.md](docs/release-roadmap.md). User-readable release notes
 live in [CHANGELOG.md](CHANGELOG.md).
 
-The current 0.1.0 pilot path is Linux/SSH only. RDP commands remain available
+The current 0.1.x pilot path is Linux/SSH only. RDP commands remain available
 for lab testing, but RelayKit should not be used for real-user RDP assistance
 until a supported Windows host rehearsal is recorded in the release notes.
 
-RDP support for 0.1.0 means a localhost-only tunnel to an existing Windows Remote Desktop service. RelayKit should not automatically enable RDP, change firewall rules, add users, collect passwords, disable Windows security controls, or install persistence for assistance.
+RDP support for 0.1.x means a localhost-only tunnel to an existing Windows Remote Desktop service. RelayKit should not automatically enable RDP, change firewall rules, add users, collect passwords, disable Windows security controls, or install persistence for assistance.
 
 ## Next Decisions
 

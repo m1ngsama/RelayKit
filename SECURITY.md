@@ -8,9 +8,10 @@ exposure, relay impersonation, artifact substitution, or audit-log loss.
 
 | Version | Status | Notes |
 | --- | --- | --- |
-| `0.1.0` | Supported for private pilot reports | Linux/SSH pilot only. RDP remains lab-only. |
+| `0.1.1` | Supported for public pilot reports | Linux/SSH pilot only. RDP remains lab-only. |
+| `0.1.0` | Supported for private pilot reports | Private artifacts only. Upgrade public deployments to `0.1.1`. |
 | `main` | Development | Security reports are welcome, but APIs may change. |
-| `< 0.1.0` | Unsupported | Upgrade to 0.1.0 before pilot use. |
+| `< 0.1.0` | Unsupported | Upgrade to `0.1.1` before pilot use. |
 
 ## Reporting A Vulnerability
 
@@ -36,9 +37,9 @@ Include enough private detail for reproduction when possible:
 - Expected security boundary and the observed bypass.
 - Relevant audit log lines with secrets and user-identifying details removed.
 
-## 0.1.0 Security Boundaries
+## 0.1.x Security Boundaries
 
-The 0.1.0 pilot is intended to preserve these boundaries:
+The 0.1.x pilot is intended to preserve these boundaries:
 
 - Operators authenticate before creating sessions, listing sessions, uploading
   artifacts, or opening tunnels.
